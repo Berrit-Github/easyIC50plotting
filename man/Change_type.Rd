@@ -28,5 +28,5 @@ the new data file with the correct data types
 change column data type
 }
 \examples{
- data_2 <-  Change_type(data , "compConcentration" , "dbl" , "RawData" , "dbl"  , "compName" , "factor")
+data_2 <-Change_type(data, "compConcentration", "dbl", "RawData", "dbl", "compName", "factor")
 }
