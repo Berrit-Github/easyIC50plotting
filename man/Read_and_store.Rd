@@ -18,5 +18,5 @@ the newly downloaded file
 download data
 }
 \examples{
-data  <- Read_and_store("data/CE.LIQ.FLOW.062_Tidydata.xlsx" , ".xlsx")
+data  <- Read_and_store("inst/CE.LIQ.FLOW.062_Tidydata.xlsx" , ".xlsx")
 }

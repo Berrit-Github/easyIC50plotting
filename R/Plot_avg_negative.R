@@ -16,5 +16,5 @@ Plot_avg_negative <- function(file , col_neg  , name_neg, RawData, conc, colour)
 
   file["RawData"] <- file["RawData"]/colMeans(dplyr::filter(file, {{col_neg}} == name_neg)["RawData"] , na.rm =TRUE)
 
-  ggplot2::ggplot(file, ggplot2::aes(x = log10({{conc}}) , y = {{RawData}} , colour = {{colour}} , shape = {{col_neg}} )) + geom_jitter(width = 0.1) + labs(x = "component concentration on log10 scale (nM)" , y = "number of offspring" ) + ggplot2::xlim(-4.5 , 2)
+  ggplot2::ggplot(file, ggplot2::aes(x = log10({{conc}}) , y = {{RawData}} , colour = {{colour}} , shape = {{col_neg}} )) + ggplot2::geom_jitter(width = 0.1) + ggplot2::labs(x = "component concentration on log10 scale (nM)" , y = "number of offspring" ) + ggplot2::xlim(-4.5 , 2)
 }
