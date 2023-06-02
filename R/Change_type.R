@@ -1,3 +1,18 @@
+#' change column data type
+#'
+#' @param file the file / path to file, that needs to be changed
+#' @param file_col_1  the name of the column to change
+#' @param type_1  the type of data it should be changed to ("dbl" , "factor" , "character")
+#' @param file_col_2 the name of the column to change
+#' @param type_2 the type of data it should be changed to ("dbl" , "factor" , "character")
+#' @param file_col_3 the name of the column to change
+#' @param type_3 the type of data it should be changed to ("dbl" , "factor" , "character")
+#'
+#' @return the new data file with the correct data types
+#' @export
+#'
+#' @examples
+#'  data_2 <-  Change_type(data , "compConcentration" , "dbl" , "RawData" , "dbl"  , "compName" , "factor")
 Change_type <- function(file , file_col_1 , type_1 , file_col_2 , type_2 , file_col_3 , type_3 ) {
   file <- as.data.frame(file)
   if (type_1 == "dbl"){file[[file_col_1]] <-  gsub(",", "." ,file[[file_col_1]] ) %>%  as.numeric( na.rm = TRUE)

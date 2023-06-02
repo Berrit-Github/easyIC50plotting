@@ -1,3 +1,13 @@
+#' download data
+#'
+#' @param pathname_of_file a vector or string that contains a path to the data file
+#' @param file_type the type of data file used (.xlsx , .csv or .csv2)
+#'
+#' @return the newly downloaded file
+#' @export
+#'
+#' @examples
+#' data  <- Read_and_store("data/CE.LIQ.FLOW.062_Tidydata.xlsx" , ".xlsx")
 Read_and_store <- function(pathname_of_file , file_type){
   library(readxl)
   library(tidyverse)

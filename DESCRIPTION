@@ -2,7 +2,7 @@ Package: easyIC50plotting
 Title: Function to make IC50 analysis easier
 Version: 0.0.0.9000
 Authors@R: 
-    person("Berrit", "Last", , "Berrit.last@example.com", role = c("aut", "cre")
+    person("Berrit", "Last", , "Berrit.last@example.com", role = c("aut", "cre"))
 Description: The package contains function for to easier read data files, change the type of data andplot IC50 graphs
 License: MIT + file LICENSE
 Encoding: UTF-8
