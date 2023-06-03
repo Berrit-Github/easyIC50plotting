@@ -26,5 +26,5 @@ A plot with the newly calculated data
 Plot the IC50 data with the negative control as avarege
 }
 \examples{
-Plot_avg_negative(data_2 , expType , "controlNegative" , RawData , compConcentration , compName )
+\dontrun{Plot_avg_negative(data_2, expType, "controlNegative", RawData, comp, compName)}
 }

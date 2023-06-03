@@ -11,7 +11,7 @@
 #' @export
 #'
 #' @examples
-#' Plot_avg_negative(data_2 , expType , "controlNegative" , RawData , compConcentration , compName )
+#' \dontrun{Plot_avg_negative(data_2, expType, "controlNegative", RawData, comp, compName)}
 Plot_avg_negative <- function(file , col_neg  , name_neg, RawData, conc, colour){
 
   file["RawData"] <- file["RawData"]/colMeans(dplyr::filter(file, {{col_neg}} == name_neg)["RawData"] , na.rm =TRUE)

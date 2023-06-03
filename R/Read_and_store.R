@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-#' data  <- Read_and_store("inst/CE.LIQ.FLOW.062_Tidydata.xlsx" , ".xlsx")
+#' \dontrun{data  <- Read_and_store("inst/CE.LIQ.FLOW.062_Tidydata.xlsx" , ".xlsx")}
 Read_and_store <- function(pathname_of_file , file_type){
   if (file_type == ".xlsx"){ onderzoek_data_portfolie_1 <- readxl::read_xlsx(pathname_of_file)
   } else if (file_type == ".csv"){onderzoek_data_portfolie_1 <- readr::read_csv(pathname_of_file)

@@ -12,10 +12,11 @@
 #' @export
 #'
 #' @examples
-#'data_2 <-Change_type("inst", "comp", "dbl", "RawData", "dbl", "compName", "factor")
-Change_type <- function(file , file_col_1 , type_1 , file_col_2 , type_2 , file_col_3 , type_3 ){
+#' \dontrun{data_2 <- Change_type(data, "comp", "dbl", "RawData", "dbl", "compName", "factor")}
 
+Change_type <- function(file, file_col_1 , type_1 , file_col_2 , type_2 , file_col_3 , type_3 ){
 
+  file <- as.data.frame.data.frame(file, row.names = NULL, optional = FALSE)
   if (type_1 == "dbl"){file[[file_col_1]] <-  as.numeric(gsub(",", "." ,file[[file_col_1]] ) ,  na.rm = TRUE)
   } else if (type_1 == "factor") {file[[file_col_1]] <- as.factor((file[[file_col_1]]) )
   } else if (type_1 == "character") {file[[file_col_1]] <- as.character((file[[file_col_1]]) )
