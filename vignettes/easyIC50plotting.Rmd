@@ -1,0 +1,20 @@
+---
+title: "easyIC50plotting"
+author: "Berrit Kievith"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{easyIC50plotting}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(easyIC50plotting)
+```
