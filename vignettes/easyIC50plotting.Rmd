@@ -10,9 +10,11 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
+```{r include=}
 library(easyIC50plotting)
-knitr::opts_chunk$set( comment = "#>")
+knitr::opts_chunk$set( comment = "#>", fig.align = "center", 
+               out.width = "90%",
+               fig.width = 6, fig.height = 5.5)
 ```
 
 This vignette shows how the eastIC50plotting packages can be used to clean and change data as well as plotting it.
