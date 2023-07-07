@@ -12,7 +12,7 @@ vignette: >
 
 ```{r, include = FALSE}
 library(easyIC50plotting)
-knitr::opts_chunk$set(fig.dpi = 200, collapse = TRUE, comment = "#>")
+knitr::opts_chunk$set( comment = "#>")
 ```
 
 This vignette shows how the eastIC50plotting packages can be used to clean and change data as well as plotting it.
