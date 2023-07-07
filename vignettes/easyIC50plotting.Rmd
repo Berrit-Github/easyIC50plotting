@@ -10,7 +10,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r}
+```{r include=FALSE}
 library(easyIC50plotting)
 knitr::opts_chunk$set(fig.align = "center", out.width = "90%", fig.width = 6, fig.height = 5.5)
 ```
