@@ -12,7 +12,7 @@ vignette: >
 
 ```{r, include = FALSE}
 library(easyIC50plotting)
-knitr::opts_chunk$set(fig.dpi = 96, collapse = TRUE, comment = "#>")
+knitr::opts_chunk$set(fig.dpi = 200, collapse = TRUE, comment = "#>")
 ```
 
 This vignette shows how the eastIC50plotting packages can be used to clean and change data as well as plotting it.
@@ -53,13 +53,13 @@ when plotting data it is important to know what it is you want to show.
 for now there are two functions that can be used to show the data.
 
 The first function calculates the average value of the negative control next it will plot the other data points as a factor of this value. this way it is easy to see how much higher or lower the data is compared to the negative control.
-```{r , out.width = 50%}
+```{r }
 Plot_avg_negative(data_2 , expType , "controlNegative" , RawData , compConcentration , compName)
 ```
 
 In the second function it would be handy to see how much the other controls differ from the other controls. This graph gives a bar plot with the controls given in the object bar.
 
-```{r, out.width = 50%}
+```{r}
 Plot_veh_con(data_2, expType,"controlPositive" ,"controlNegative", "controlVehicleA",RawData)
 
 ```
