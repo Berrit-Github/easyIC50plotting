@@ -29,7 +29,7 @@ You can install the development version of easyIC50plotting from [GitHub](https:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("Berrit-Github/easyIC50plotting")
+devtools::install_github("Berrit-Github/easyIC50plotting" , build_vignettes = TRUE)
 ```
 
 ## Example

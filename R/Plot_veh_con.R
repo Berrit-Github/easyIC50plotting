@@ -21,5 +21,5 @@ Plot_veh_con <- function(file , col_neg , name_pos , name_veh, name_neg, RawData
 
   df <- dplyr::mutate(df , names = c((rownames(df))))
 
-  return(ggplot2::ggplot(df , ggplot2::aes(x = names , y= "value" , group = names, fill = names)) + ggplot2::geom_col()) + ggplot2::labs(x = NULL , y = "mean raw data")
+  return(ggplot2::ggplot(df , ggplot2::aes(x = names , y= value, group = names, fill = names)) + ggplot2::geom_col()) + ggplot2::labs(x = NULL , y = "mean raw data")
 }

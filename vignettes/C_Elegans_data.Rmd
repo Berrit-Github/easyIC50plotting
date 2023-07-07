@@ -1,0 +1,41 @@
+---
+title: "C_Elegans_data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{C_Elegans_data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(easyIC50plotting)
+library(tidyverse)
+```
+The example C_elgans_data provided by this package is made from the code displayed here.
+First a raw data set was made.
+
+```{r}
+C_Elegans_raw_data <- data.frame(vialcode = c("A1", "A2" ,"B1", "B2" ,"C1" ,"C2" ,"D1", "D2"), name_comp = c("ethanol"  ,   "ethanol"   ,  "sodium" ,     "sodium"  ,    "penicilline", "penicilline" ,"soap" ,       "soap" ),
+                                 comptype = c("neg_con"    ,"neg_con" ,   "vehichal"  , "vehical" ,   "pos_con"   , "pos_con"   , "experiment" ,"experiment"),
+                                 comp_concentration = c(100 ,100  ,50 , 50  ,10 , 10,  10,  10), 
+                                 unit = c( "nM" ,"nM" ,"nM", "nM", "nM" ,"nM" ,"nM", "nM"),
+                                 offspring = c(20, 25, 20, 19,  3 , 2 , 7 , 9),
+                                 responsiveness = c(5 , 5 , 5, 4, 2, 1 , 3, 3))
+```
+
+after making a raw data set the data was made tidy with the pivot longer function.
+```{r}
+C_Elegans_data <- pivot_longer(C_Elegans_raw_data , cols = c("offspring" , "responsiveness"), names_to = "measurment" , values_to = "values")
+```
+
+
+
+
+

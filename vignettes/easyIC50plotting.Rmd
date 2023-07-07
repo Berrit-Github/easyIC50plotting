@@ -1,7 +1,9 @@
 ---
-title: "easyIC50plotting"
+title: "easy IC50 plotting and data cleaning"
 author: "Berrit Kievith"
 output: rmarkdown::html_vignette
+description: |
+  "easy and reliable way to clean and plot data for IC50 analysis"
 vignette: >
   %\VignetteIndexEntry{easyIC50plotting}
   %\VignetteEngine{knitr::rmarkdown}
@@ -9,12 +11,67 @@ vignette: >
 ---
 
 ```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+library(easyIC50plotting)
+knitr::opts_chunk$set(fig.dpi = 96, collapse = TRUE, comment = "#>")
 ```
 
-```{r setup}
-library(easyIC50plotting)
+This vignette shows how the eastIC50plotting packages can be used to clean and change data as well as plotting it.
+
+## downloading data
+
+when data is gathered in files and loaded into Rstudio the type of file must be identified first. next the appropriator function must be chosen to download the file. With the Read_and_store function only needs the given directory and the file identifier to read and store these to rStudio.
+It can recognize ".xlsx" , ".csv" and ".csv2"
+
+```{r}
+data  <- Read_and_store("../inst/CE.LIQ.FLOW.062_Tidydata.xlsx" , ".xlsx")
+
+head(data)
 ```
+
+
+## inspecting and cleaning data
+
+when looking at data the computer can not identify which type the data should be and makes an estimate. This is not always correct.
+
+```{r}
+head(data)
+```
+
+the columns .. .. and .. should change to .. .. and ..
+The Change_type function changes the the selected columns to the selected type.
+
+```{r}
+data_2 <- Change_type(data, "compConcentration", "dbl", "RawData", "dbl", "compName", "factor")
+head(data_2)
+```
+
+The data has now been changed to the correct types.
+
+## plotting the data
+
+when plotting data it is important to know what it is you want to show.
+for now there are two functions that can be used to show the data.
+
+The first function calculates the average value of the negative control next it will plot the other data points as a factor of this value. this way it is easy to see how much higher or lower the data is compared to the negative control.
+```{r}
+Plot_avg_negative(data_2 , expType , "controlNegative" , RawData , compConcentration , compName)
+```
+
+In the second function it would be handy to see how much the other controls differ from the other controls. This graph gives a bar plot with the controls given in the object bar.
+
+```{r}
+Plot_veh_con(data_2, expType,"controlPositive" ,"controlNegative", "controlVehicleA",RawData)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
