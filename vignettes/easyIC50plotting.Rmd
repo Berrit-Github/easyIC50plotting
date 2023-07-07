@@ -53,13 +53,13 @@ when plotting data it is important to know what it is you want to show.
 for now there are two functions that can be used to show the data.
 
 The first function calculates the average value of the negative control next it will plot the other data points as a factor of this value. this way it is easy to see how much higher or lower the data is compared to the negative control.
-```{r}
+```{r , fig.width= 100%}
 Plot_avg_negative(data_2 , expType , "controlNegative" , RawData , compConcentration , compName)
 ```
 
 In the second function it would be handy to see how much the other controls differ from the other controls. This graph gives a bar plot with the controls given in the object bar.
 
-```{r}
+```{r, fig.width= 100%}
 Plot_veh_con(data_2, expType,"controlPositive" ,"controlNegative", "controlVehicleA",RawData)
 
 ```

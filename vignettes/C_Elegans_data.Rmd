@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, warning=FALSE , message=FALSE}
 library(easyIC50plotting)
 library(tidyverse)
 ```
@@ -28,11 +28,14 @@ C_Elegans_raw_data <- data.frame(vialcode = c("A1", "A2" ,"B1", "B2" ,"C1" ,"C2"
                                  unit = c( "nM" ,"nM" ,"nM", "nM", "nM" ,"nM" ,"nM", "nM"),
                                  offspring = c(20, 25, 20, 19,  3 , 2 , 7 , 9),
                                  responsiveness = c(5 , 5 , 5, 4, 2, 1 , 3, 3))
+C_Elegans_raw_data
 ```
 
 after making a raw data set the data was made tidy with the pivot longer function.
 ```{r}
 C_Elegans_data <- pivot_longer(C_Elegans_raw_data , cols = c("offspring" , "responsiveness"), names_to = "measurment" , values_to = "values")
+
+C_Elegans_data
 ```
 
 
